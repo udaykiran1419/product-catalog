@@ -1,0 +1,16 @@
+<div class="category-buttons">
+  <button (click)="setCategory('All')">All</button>
+  <button (click)="setCategory('Electronics')">Electronics</button>
+  <button (click)="setCategory('Clothing')">Clothing</button>
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of filteredProducts">
+    <h3>{{ product.name }}</h3>
+    <p>Category: {{ product.category }}</p>
+    <p>Price: ₹{{ product.price }}</p>
+    <button (click)="addToCart(product)">Add to Cart</button>
+  </div>
+</div>
+
+<app-cart [items]="cart" (remove)="removeFromCart($event)"></app-cart>

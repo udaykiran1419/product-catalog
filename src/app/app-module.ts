@@ -1,20 +1,18 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { ProductListComponent } from './components/product-list/product-list';
+import { CartComponent } from './components/cart/cart';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    ProductListComponent,
+    CartComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
+  imports: [BrowserModule],
+  providers: [],
   bootstrap: [App]
 })
-export class AppModule { }
+export class AppModule {}
